@@ -28,6 +28,7 @@ init:
   - cmd: msbuild /version
   - ps: Start-FileDownload 'https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi'
   - ps: msiexec /i graphviz-2.38.msi /quiet /qn /norestart /log install.log
+  - cmd: set PATH=C:\Program Files (x86)\Graphviz2.38\bin;%PATH% 
   - cmd: dot -?
 
 install:
