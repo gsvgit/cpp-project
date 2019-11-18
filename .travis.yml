@@ -19,15 +19,15 @@ matrix:
       env:
         - MATRIX_EVAL="CXX_COMPILER=g++-7"
 
-    - os: osx
-      osx_image: xcode10.1
-      addons:
-        homebrew:
-          packages:
-          - lcov
-          - graphviz
-      env:
-        - MATRIX_EVAL="CXX_COMPILER=clang++"
+#    - os: osx
+#      osx_image: xcode10.1
+#      addons:
+#        homebrew:
+#          packages:
+#          - lcov
+#          - graphviz
+#      env:
+#        - MATRIX_EVAL="CXX_COMPILER=clang++"
     
 
 before_install:
