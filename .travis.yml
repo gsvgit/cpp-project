@@ -10,11 +10,11 @@ matrix:
     - os: linux
       addons:
         apt:
-          sources:
-          - ubuntu-toolchain-r-test
+#          sources:
+#          - ubuntu-toolchain-r-test
           packages:
             - lcov
-            - g++-7
+#            - g++-7
             - graphviz
       env:
         - MATRIX_EVAL="CXX_COMPILER=g++-7; sudo update-alternatives --install /usr/bin/gcov gcov /usr/bin/gcov-7 90"
