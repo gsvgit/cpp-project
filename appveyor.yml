@@ -26,19 +26,13 @@ matrix:
 init:
   - cmd: cmake --version
   - cmd: msbuild /version
+
+install:
+  - git submodule update --init --recursive
   - ps: Start-FileDownload 'https://graphviz.gitlab.io/_pages/Download/windows/graphviz-2.38.msi'
   - cmd: msiexec /i graphviz-2.38.msi /quiet /qn /norestart /log install.log
   - cmd: set PATH=C:\Program Files (x86)\Graphviz2.38\bin;%PATH% 
   - cmd: dot -?
-#  - cmd: more install.log
-#  - cmd: cd\ 
-#  - cmd: dir Graphviz* /AD /s
-#  - cmd: set PATH=C:\Program Files (x86)\Graphviz2.38\bin;%PATH% 
-#  - cmd: '"C:\Program Files (x86)\Graphviz2.38\bin\dot.exe" -?'
-#  - cmd: dot -?
-
-install:
-  - git submodule update --init --recursive
 
 before_build:
   - cmake . -Bbuild -A%PLATFORM% -DCMAKE_BUILD_TYPE=%configuration%
