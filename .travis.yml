@@ -10,14 +10,14 @@ matrix:
     - os: linux
       addons:
         apt:
-#          sources:
-#          - ubuntu-toolchain-r-test
+          sources:
+           - ubuntu-toolchain-r
           packages:
             - lcov
-#            - g++-7
+            - g++-7
             - graphviz
       env:
-        - MATRIX_EVAL="CXX_COMPILER=g++"
+        - MATRIX_EVAL="CXX_COMPILER=g++-7"
 
     - os: osx
       osx_image: xcode10.1
